@@ -51,11 +51,42 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-console.log(document.querySelector('.main-content'));
-document.querySelector('.start-button').addEventListener('click', ()=>{
-  document.querySelector('.main-content').classList.add('start');
-  document.querySelector('.start-button').classList.add('hide');
+const startBtn = document.querySelector('.start-button');
+const hideBtn = document.getElementById('hide-nav');
+const showBtn = document.getElementById('show-nav');
+const navBar = document.querySelector('.nav');
+const navItem = document.querySelectorAll('.nav-item');
+const mainContent = document.querySelector('.main-content');
+
+startBtn.addEventListener('click', ()=>{
+  mainContent.classList.add('start');
+  startBtn.classList.add('hide');
 });
+
+hideBtn.addEventListener('click', ()=> {
+  navBar.classList.add('hide');
+  showBtn.classList.add('start');
+});
+
+showBtn.addEventListener('click', ()=> {
+  navBar.classList.remove('hide');
+  showBtn.classList.remove('start');
+});
+
+navItem.forEach(item => item.addEventListener('mousedown', ()=>{
+  item.classList.add('click');
+}))
+navItem.forEach(item => item.addEventListener('mouseup', ()=>{
+  item.classList.remove('click');
+}));
+
+
+
+
+
+
+
+
 
 
 
