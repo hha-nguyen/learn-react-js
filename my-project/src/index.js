@@ -51,11 +51,30 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-const startBtn = document.querySelector('.start-button');
 const hideBtn = document.getElementById('hide-nav');
 const showBtn = document.getElementById('show-nav');
 const navBar = document.querySelector('.nav');
 const navItem = document.querySelectorAll('.nav-item');
+
+hideBtn.addEventListener('click', ()=> {
+    navBar.classList.add('hide');
+    showBtn.classList.add('start');
+});
+
+showBtn.addEventListener('click', ()=> {
+    navBar.classList.remove('hide');
+    showBtn.classList.remove('start');
+});
+
+navItem.forEach(item => item.addEventListener('mousedown', ()=>{
+    item.classList.add('click');
+}));
+
+navItem.forEach(item => item.addEventListener('mouseup', ()=>{
+    item.classList.remove('click');
+}));
+
+const startBtn = document.querySelector('.start-button');
 const mainContent = document.querySelector('.main-content');
 
 startBtn.addEventListener('click', ()=>{
@@ -63,22 +82,36 @@ startBtn.addEventListener('click', ()=>{
   startBtn.classList.add('hide');
 });
 
-hideBtn.addEventListener('click', ()=> {
-  navBar.classList.add('hide');
-  showBtn.classList.add('start');
-});
+let elToShow = document.querySelectorAll('.journey-item');
 
-showBtn.addEventListener('click', ()=> {
-  navBar.classList.remove('hide');
-  showBtn.classList.remove('start');
-});
+let isElInViewPort = (el) => {
+	let rect = el.getBoundingClientRect()
+	// some browsers support innerHeight, others support documentElement.clientHeight
+	let viewHeight = window.innerHeight || document.documentElement.clientHeight
 
-navItem.forEach(item => item.addEventListener('mousedown', ()=>{
-  item.classList.add('click');
-}))
-navItem.forEach(item => item.addEventListener('mouseup', ()=>{
-  item.classList.remove('click');
-}));
+	return (
+		(rect.top <= 0 && rect.bottom >= 0) ||
+		(rect.bottom >= viewHeight && rect.top <= viewHeight) ||
+		(rect.top >= 0 && rect.bottom <= viewHeight)
+	)
+}
+
+function loop() {
+	elToShow.forEach((item) => {
+		if (isElInViewPort(item)) {
+			item.classList.add('show')
+		} else {
+			item.classList.remove('show')
+		}
+	})
+}
+
+window.onscroll = loop
+
+loop()
+
+
+
 
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../img/react-logo.png';
+import logo from '../../img/react-logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown, faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,7 +11,7 @@ export default function Header() {
             <h1 className='nav-title'>Mesto</h1>
             <ul className='nav-items'>
                 <li className='nav-item'>
-                    <a href='#'>Home</a>
+                   <a href='#'>Home</a>
                 </li>
                 <li className='nav-item'>
                     <a href='#'>My Journey</a>
