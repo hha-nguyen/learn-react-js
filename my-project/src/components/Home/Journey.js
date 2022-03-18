@@ -16,3 +16,15 @@ export default function Journey(props) {
         </div>
     );
 }
+
+// Journey.propsTypes = {
+//     img: React.propsTypes.string,
+//     title: React.propsTypes.string.isRequired,
+//     date: React.propsTypes.string,
+//     desc: React.propsTypes.string,
+//     continue: React.propsTypes.string,
+// }
+
+// Journey.defaultProps = {
+//     title: 'Journey item title'
+// }
