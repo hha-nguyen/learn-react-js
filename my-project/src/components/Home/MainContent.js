@@ -5,15 +5,10 @@ import JourneyData from "./JourneyData";
 export default  function MainContent() {
   const journeyItems = JourneyData.map(journeyItem => 
     <Journey 
-      id={journeyItem.id}
-      img={journeyItem.img}
-      title={journeyItem.title}
-      date={journeyItem.date}
-      desc={journeyItem.desc}
-      continue={journeyItem.continue}
+      key={journeyItem.id}
+      {...journeyItem}
     />
   );
-  console.log(journeyItems);
 
   return (
     <div className="main-content">

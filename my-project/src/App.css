@@ -233,6 +233,7 @@ code {
 }
 
 .journey-content .journey-title{
+  height: 3rem;
   font-size: 1.2rem;
   margin: 0.5rem 0 0.2rem 0;
 }
@@ -245,6 +246,20 @@ code {
 .journey-content .journey-desc{
   height: 5.5rem;
   overflow: hidden;
+}
+
+.journey-content .journey-continue{
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.journey-continue:hover{
+  background-color: var(--primary-color);
+  color: #000;
 }
 
 footer{

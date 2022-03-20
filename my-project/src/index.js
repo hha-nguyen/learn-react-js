@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'; 
 
 // ReactDOM.render(
 //     <ul>
@@ -50,29 +50,6 @@ import reportWebVitals from './reportWebVitals';
 //COMPONENTS
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-const hideBtn = document.getElementById('hide-nav');
-const showBtn = document.getElementById('show-nav');
-const navBar = document.querySelector('.nav');
-const navItem = document.querySelectorAll('.nav-item');
-
-hideBtn.addEventListener('click', ()=> {
-    navBar.classList.add('hide');
-    showBtn.classList.add('start');
-});
-
-showBtn.addEventListener('click', ()=> {
-    navBar.classList.remove('hide');
-    showBtn.classList.remove('start');
-});
-
-navItem.forEach(item => item.addEventListener('mousedown', ()=>{
-    item.classList.add('click');
-}));
-
-navItem.forEach(item => item.addEventListener('mouseup', ()=>{
-    item.classList.remove('click');
-}));
 
 const startBtn = document.querySelector('.start-button');
 const mainContent = document.querySelector('.main-content');
