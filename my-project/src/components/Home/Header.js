@@ -24,8 +24,8 @@ export default function Header() {
     }
 
     return (
-        <header>
-        <nav className={`nav ${isHided ? "hide" : ""}`}>
+        <header className='header'>
+        <nav className={`nav ${isHided ? "hide" : ""}`}> 
             <img className='nav-logo' src='/img/react-logo.png' alt='React logo' width='40px'/>
             <h1 className='nav-title'>Mesto</h1>
             <ul className='nav-items'>

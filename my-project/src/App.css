@@ -1,5 +1,5 @@
 :root{
-  --primary-color: #61dafb;
+  --primary-color: rgb(96, 217, 251);
   --second-color: #075368;
 }
 
@@ -188,14 +188,14 @@ code {
   margin-top: 50vh;
   padding: 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1rem;
-  grid-row-gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
   justify-content: center;
   align-content: center;
 }
 
 .main-content .journey-item{
+  position: relative;
   display: flex;
   justify-self: center;
   padding: 1rem;
@@ -207,6 +207,61 @@ code {
   color: #000;
   background-color: #fff;
   transform: scale(0);
+} 
+
+.journey-overlay{
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* background-color: rgba(96, 217, 251, 0.8); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.journey-item:hover .journey-overlay{
+  top: 0%;
+  left: 0%;
+}
+
+.journey-icon{
+  display: flex;
+}
+
+.journey-heart, .journey-comment{
+  font-size: 2rem;
+  opacity: 1;
+  margin: 2rem;
+  cursor: pointer;
+}
+
+#heart-icon, #comment-icon{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #000;
+  color: #fff;
+}
+
+#heart-icon:hover, #comment-icon:hover {
+  background-color: var(--primary-color);
+}
+
+.journey-heart.click > #heart-icon{
+  color: #fa4587;
+}
+
+.journey-continue{
+  padding: 0.8rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
 }
 
 .journey-item.show{
@@ -248,15 +303,6 @@ code {
   overflow: hidden;
 }
 
-.journey-content .journey-continue{
-  padding: 0.8rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
 .journey-continue:hover{
   background-color: var(--primary-color);
   color: #000;
@@ -292,3 +338,11 @@ small{
   }
 }
 
+@keyframes glowing-spin{
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}

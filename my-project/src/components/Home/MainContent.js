@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Journey from "./Journey";
 import JourneyData from "./JourneyData";
 
@@ -9,10 +9,22 @@ export default  function MainContent() {
       {...journeyItem}
     />
   );
+  
+  const [isHided, setIsHided] = React.useState(false);
+  const [isStart, setIsStart] = React.useState(false);
+  const showMainContent = () => {
+    setIsHided(true);
+    setIsStart(true);
+  }
+  const startBtn = isHided ? "start-button hide" : "start-button";
+
+  const mainContent = isStart ? "main-content start" : "main-content";
+
+  //Make journey items zoom out when scroll in the viewport
 
   return (
-    <div className="main-content">
-      <button className="start-button">Start</button>
+    <div className={`${mainContent}`}>
+      <button className={`${startBtn}`} onClick={showMainContent}>Start</button>
       <h1>learning react</h1>
       <h1>learning react</h1>
       <ul className='reason-list'>

@@ -51,14 +51,6 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-const startBtn = document.querySelector('.start-button');
-const mainContent = document.querySelector('.main-content');
-
-startBtn.addEventListener('click', ()=>{
-  mainContent.classList.add('start');
-  startBtn.classList.add('hide');
-});
-
 let elToShow = document.querySelectorAll('.journey-item');
 
 let isElInViewPort = (el) => {
