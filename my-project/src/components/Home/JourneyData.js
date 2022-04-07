@@ -1,5 +1,5 @@
 
-export default [
+export const journeyData = [
     {   
         id: 1,
         img: "day_1.jpg",

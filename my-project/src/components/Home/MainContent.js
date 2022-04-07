@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Journey from "./Journey";
-import JourneyData from "./JourneyData";
+import { journeyData } from "./JourneyData";
 
 export default  function MainContent() {
-  const journeyItems = JourneyData.map(journeyItem => 
+  const journeyItems = journeyData.map(journeyItem => 
     <Journey 
       key={journeyItem.id}
       {...journeyItem}
@@ -11,7 +11,7 @@ export default  function MainContent() {
   );
   
   const [isHided, setIsHided] = React.useState(false);
-  const [isStart, setIsStart] = React.useState(false);
+  const [isStart, setIsStart] = React.useState(false); 
   const showMainContent = () => {
     setIsHided(true);
     setIsStart(true);

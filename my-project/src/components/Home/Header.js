@@ -25,15 +25,15 @@ export default function Header() {
 
     return (
         <header className='header'>
-        <nav className={`nav ${isHided ? "hide" : ""}`}> 
-            <img className='nav-logo' src='/img/react-logo.png' alt='React logo' width='40px'/>
-            <h1 className='nav-title'>Mesto</h1>
-            <ul className='nav-items'>
-                {navItems}  
-            </ul>
-            <FontAwesomeIcon id="hide-nav" className={`${showBtn ? "start" : ""}`} icon={faArrowUpFromBracket} onClick={hideNav}/>
-        </nav>
-        <FontAwesomeIcon id="show-nav" className={`${showBtn ? "start" : ""}`} icon={faArrowDown} onClick={showNav}/>
+            <nav className={`nav ${isHided ? "hide" : ""}`}> 
+                <img className='nav-logo' src='/img/react-logo.png' alt='React logo' width='40px'/>
+                <h1 className='nav-title'>Mesto</h1>
+                <ul className='nav-items'>
+                    {navItems}  
+                </ul>
+                <FontAwesomeIcon id="hide-nav" className={`${showBtn ? "start" : ""}`} icon={faArrowUpFromBracket} onClick={hideNav}/>
+            </nav>
+            <FontAwesomeIcon id="show-nav" className={`${showBtn ? "start" : ""}`} icon={faArrowDown} onClick={showNav}/>
         </header>
     );
 }

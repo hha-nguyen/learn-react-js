@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals'; 
+// import reportWebVitals from './reportWebVitals'; 
 
 // ReactDOM.render(
 //     <ul>
@@ -57,7 +57,7 @@ let isElInViewPort = (el) => {
 	let rect = el.getBoundingClientRect()
 	// some browsers support innerHeight, others support documentElement.clientHeight
 	let viewHeight = window.innerHeight || document.documentElement.clientHeight
-
+	
 	return (
 		(rect.top <= 0 && rect.bottom >= 0) ||
 		(rect.bottom >= viewHeight && rect.top <= viewHeight) ||
