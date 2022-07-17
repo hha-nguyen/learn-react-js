@@ -9,6 +9,7 @@
         justify-content: flex-start;
         padding: 11px 16px;
         border-radius: 0;
+        line-height: 1.8rem;
     }
 }
 
@@ -20,4 +21,24 @@
     background-color: rgba($color: #242435, $alpha: 0.03);
 }
 
+//Header
+.header {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: -8px;
+}
 
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
