@@ -9,8 +9,9 @@
     min-height: 1000px;
     background-color: #333;
     display: flex;
-}
+    margin-top: var(--default-layout-header-height);
 
+}
 .content{
     flex: 1;
     background-color: #ccc;
