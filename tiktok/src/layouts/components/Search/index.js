@@ -6,7 +6,7 @@ import {
 import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import * as searchServices from '~/apiServices/searchServices'
+import * as searchServices from '~/services/searchService'
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItems from '~/components/AccountItems';
 import { useState, useEffect, useRef } from 'react';
