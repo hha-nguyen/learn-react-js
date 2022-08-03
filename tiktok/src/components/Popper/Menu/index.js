@@ -5,6 +5,7 @@ import styles from './Menu.module.scss';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
+import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -43,7 +44,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange}) {
                     <PopperWrapper className={cx('menu-propper')}>
                         {history.length > 1 && (
                             <Header
-                                title="Language"
+                                title={current.title}
                                 onBack={() => {
                                     setHistory((prev) => 
                                         // console.log(prev);
@@ -61,6 +62,13 @@ function Menu({ children, items = [], hideOnClick = false, onChange}) {
             {children}
         </Tippy>
     );
+}
+
+Menu.propTypes = {
+    children: PropTypes.node,
+    items: PropTypes.array,
+    hideOnClick: PropTypes.bool,
+    onChange: PropTypes.func,
 }
 
 export default Menu;
