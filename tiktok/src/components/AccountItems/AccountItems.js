@@ -17,10 +17,11 @@ function AccountItems({ data }) {
             />
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
-                    <span>{data.full_name}</span>
+                    <span>{data.nickname}</span>
                     {data.tick && (<FontAwesomeIcon className={cx('check')} icon={faCheckCircle}></FontAwesomeIcon>)}
                 </h4>
-                <span className={cx('username')}>{data.nickname}</span>
+                <span className={cx('username')}>{data.full_name}</span>
+
             </div>
         </Link>
     );

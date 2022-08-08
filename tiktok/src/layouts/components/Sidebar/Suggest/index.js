@@ -1,2 +1,2 @@
 export { default } from './Suggest';
-export { default as SuggestItem} from './SuggestItem';
+export { GROUP_OF_USER_DATA } from './userData'

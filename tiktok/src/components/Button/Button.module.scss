@@ -16,7 +16,7 @@
     }
 }
 
-.primary, .outline, .text, .rounded{
+.primary, .outline, .text{
     margin-left: 16px;
     text-align: center;
 }
@@ -50,6 +50,7 @@
 
 .rounded {
     border-radius: 999px;
+    color: var(--primary);
 }
 
 //Button style
