@@ -2,3 +2,19 @@
     padding: 16px 0;
     border-top: 1px solid rgba($color: #222435, $alpha: 0.12);
 }
+
+.more-btn {
+    color: var(--primary);
+    padding-left: 8px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.title {
+    padding: 0px 8px;
+    margin-bottom: 8px;
+    color: rgba(22, 24, 35, 0.75);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 500;
+}

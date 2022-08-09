@@ -4,10 +4,14 @@
     padding: 8px 8px;
     width: 100%;
     cursor: pointer;
-
     &:hover {
         background: rgba(22, 24, 35, 0.03);
     }
+}
+
+.info {
+    flex: 1;
+    margin-left: 12px;
 }
 
 .avatar {
@@ -18,14 +22,10 @@
     object-position: center;
 }
 
-.info {
-    flex: 1;
-    margin-left: 12px;
-}
-
 .name {
     font-size: 1.6rem;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .check {
@@ -35,6 +35,42 @@
 
 .username {
     font-size: 1.4rem;
-    color: rgba(22, 24, 35, 0.5);
+    color: rgba(22, 24, 35, 0.75);
+    font-weight: 550;
 }
 
+.desc {
+    position: absolute;
+    width: 320px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+    border-radius: 8px;
+
+    .info {
+        margin-left: 0;
+    }
+}
+
+.desc-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.followers-count, .likes-count {
+    font-weight: 700;
+    margin-right: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.followers, .likes {
+    color: rgba(22, 24, 35, 0.7);
+    font-size: 17px;
+    line-height: 20px;
+    display: inline-block;
+    margin-right: 12px;
+}

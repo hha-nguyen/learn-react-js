@@ -12,10 +12,6 @@ import {
     LiveActiveIcon,
 } from '~/components/Icons';
 import Suggest from './Suggest';
-import Button from '~/components/Button';
-
-import { GROUP_OF_USER_DATA } from './Suggest';
-import AccountItems from '~/components/AccountItems';
 
 const cx = classNames.bind(styles);
 
@@ -43,18 +39,7 @@ function Sidebar() {
                 ></MenuItem>
             </Menu>
 
-            <Suggest>
-                <p className={cx('suggest-title')}>Suggested accounts</p>
-                {GROUP_OF_USER_DATA.map((USER_DATA, id) => {
-                    return (
-                        <AccountItems
-                            data={USER_DATA}
-                            key={id}
-                        ></AccountItems>
-                    );
-                })}
-                <button className={cx('suggest-more-btn')}>See all</button>
-            </Suggest>
+            <Suggest />  
         </aside>
     );
 }
