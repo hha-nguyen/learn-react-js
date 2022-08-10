@@ -6,6 +6,7 @@ export const GROUP_OF_USER_DATA = [
         tick: true,
         follower: 6.6,
         like: 423.8,
+        isStreaming: true,
     },
     {
         avatar: 'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/3fda2cca3e9257c62e6fb3b8e9710184~c5_100x100.jpeg?x-expires=1660143600&x-signature=Yb0vp4J2qKWXbv1lFrhj3%2FPTdkI%3D', 
@@ -14,6 +15,7 @@ export const GROUP_OF_USER_DATA = [
         tick: true,
         follower: 7,
         like: 213.7,
+        isStreaming: true,
     },
     {
         avatar: 'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/fac92301a36c2275c99f393061ef04ca~c5_100x100.jpeg?x-expires=1660147200&x-signature=DAxw2zg829LOTLEz6mKK3Doe0Gw%3D', 
@@ -30,6 +32,7 @@ export const GROUP_OF_USER_DATA = [
         tick: true,
         follower: 8.6,
         like: 228.4,
+        isStreaming: true,
     },
     {
         avatar: 'https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8a97ef3da44f0b2c4962a2ca835220de~c5_100x100.jpeg?x-expires=1660147200&x-signature=DFX15i3euoR%2Fy%2BXfSwjFDrfrkVU%3D', 

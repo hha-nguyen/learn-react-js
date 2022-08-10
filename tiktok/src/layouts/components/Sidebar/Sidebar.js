@@ -39,7 +39,9 @@ function Sidebar() {
                 ></MenuItem>
             </Menu>
 
-            <Suggest />  
+            <Suggest title={"Suggested accounts"} /> 
+
+            <Suggest title={"Following accounts"} /> 
         </aside>
     );
 }

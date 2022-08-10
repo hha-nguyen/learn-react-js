@@ -2,19 +2,19 @@ import classNames from 'classnames/bind';
 import styles from './Suggest.module.scss';
 import { useState } from 'react';
 
-import { GROUP_OF_USER_DATA } from './userData';
 import AccountItems from '~/components/AccountItems';
+import { GROUP_OF_USER_DATA } from './userData';
 
 const cx = classNames.bind(styles);
 
-function Suggest() {
+function Suggest({ title, userData }) {
     const [showAllSuggest, setShowAllSuggest] = useState(false);
     const [currentData, setCurrentData] = useState(GROUP_OF_USER_DATA.slice(0, 3));
     const [btnContext, setBtnContext] = useState('See all');
 
     return ( 
         <div className={cx('wrapper')}>
-            <p className={cx('title')}>Suggested accounts</p>
+            <p className={cx('title')}>{title}</p>
                 {currentData.map((USER_DATA, id) => {
                     return (
                         <AccountItems

@@ -1,23 +1,32 @@
 import classNames from 'classnames/bind';
-import styles from './AccountItems.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import Image from '~/components/Image';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { debounce } from 'lodash';
+
+import styles from './AccountItems.module.scss';
+import Image from '~/components/Image';
 import Button from '../Button';
 
 const cx = classNames.bind(styles);
 
 function AccountItems({ data, isSuggestItem = false }) {
-    const [showSidebarItem, setShowSidebarItem] = useState(false);
+    const [isHover, setIsHover] = useState(false);
     const [countFollower, setCountFollower] = useState(data.follower);
     // const [countLike, setCountLike] =useState(data.like);
 
     const increaseFollower = () => {
         setCountFollower((prev) => prev + 1);
     };
+    
+    const debounceHandleMouseEnter = debounce(() => setIsHover(true), 1000);
+    
+    const handleOnMouseLeave = () => {
+        setIsHover(false);
+        debounceHandleMouseEnter.cancel();
+    }
 
     // const increaseLike = () => {
     //     setCountLike(prev => prev + 1);
@@ -28,13 +37,14 @@ function AccountItems({ data, isSuggestItem = false }) {
             <Link
                 to={`/@${data.nickname}`}
                 className={cx('wrapper')}
-                onMouseOver={() => setShowSidebarItem(true)}
-                onMouseLeave={() => setShowSidebarItem(false)}
+                onMouseEnter={debounceHandleMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
             >
                 <Image
                     className={cx('avatar')}
                     src={data.avatar}
                     alt={data.full_name}
+                    isStreaming={data.isStreaming}
                 />
                 <div className={cx('info')}>
                     <h4 className={cx('name')}>
@@ -50,12 +60,13 @@ function AccountItems({ data, isSuggestItem = false }) {
                 </div>
             </Link>
 
+
             {/* Set up suggest description for suggest account */}
-            {showSidebarItem && isSuggestItem && (
+            {isHover && isSuggestItem && (
                 <div
                     className={cx('desc')}
-                    onMouseOver={() => setShowSidebarItem(true)}
-                    onMouseLeave={() => setShowSidebarItem(false)}
+                    onMouseEnter={debounceHandleMouseEnter}
+                    onMouseLeave={handleOnMouseLeave}
                 >
                     <div className={cx('desc-header')}>
                         <Image
