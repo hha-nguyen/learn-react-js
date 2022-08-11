@@ -3,13 +3,11 @@ import styles from './Suggest.module.scss';
 import { useState } from 'react';
 
 import AccountItems from '~/components/AccountItems';
-import { GROUP_OF_USER_DATA } from './userData';
-
 const cx = classNames.bind(styles);
 
-function Suggest({ title, userData }) {
+function Suggest({ title, data }) {
     const [showAllSuggest, setShowAllSuggest] = useState(false);
-    const [currentData, setCurrentData] = useState(GROUP_OF_USER_DATA.slice(0, 3));
+    const [currentData, setCurrentData] = useState(data.slice(0, 3));
     const [btnContext, setBtnContext] = useState('See all');
 
     return ( 
@@ -18,7 +16,7 @@ function Suggest({ title, userData }) {
                 {currentData.map((USER_DATA, id) => {
                     return (
                         <AccountItems
-                            data={USER_DATA}
+                            userData={USER_DATA}
                             isSuggestItem={true}
                             key={id}
                         ></AccountItems>
@@ -29,7 +27,7 @@ function Suggest({ title, userData }) {
                     className={cx('more-btn')}
                     onClick={() => {
                         if (showAllSuggest === false) {
-                            setCurrentData([...GROUP_OF_USER_DATA]);
+                            setCurrentData([...data]);
                             setBtnContext('See less');
                             setShowAllSuggest(true)
                         } else {

@@ -12,15 +12,23 @@ import Button from '../Button';
 
 const cx = classNames.bind(styles);
 
-function AccountItems({ data, isSuggestItem = false }) {
+function AccountItems({ userData, isSuggestItem = false }) {
     const [isHover, setIsHover] = useState(false);
-    const [countFollower, setCountFollower] = useState(data.follower);
-    // const [countLike, setCountLike] =useState(data.like);
+    const [countFollower, setCountFollower] = useState(userData.follower);
+    // const [countLike, setCountLike] =useState(userData.like);
 
     const increaseFollower = () => {
-        setCountFollower((prev) => prev + 1);
+        setCountFollower((prev) => Math.floor((prev / Math.pow(10, 6) + 1)));
     };
     
+    const addToFollowedAccount = (userData) => {
+        userData.isFollowing = true;
+    }
+
+    const handleButtonOnClick = () => {
+        addToFollowedAccount(userData);
+        increaseFollower();
+    }
     const debounceHandleMouseEnter = debounce(() => setIsHover(true), 1000);
     
     const handleOnMouseLeave = () => {
@@ -35,28 +43,28 @@ function AccountItems({ data, isSuggestItem = false }) {
     return (
         <>
             <Link
-                to={`/@${data.nickname}`}
+                to={`/@${userData.nickname}`}
                 className={cx('wrapper')}
                 onMouseEnter={debounceHandleMouseEnter}
                 onMouseLeave={handleOnMouseLeave}
             >
                 <Image
                     className={cx('avatar')}
-                    src={data.avatar}
-                    alt={data.full_name}
-                    isStreaming={data.isStreaming}
+                    src={userData.avatar}
+                    alt={userData.full_name}
+                    isStreaming={userData.isStreaming}
                 />
                 <div className={cx('info')}>
                     <h4 className={cx('name')}>
-                        <span>{data.nickname}</span>
-                        {data.tick && (
+                        <span>{userData.nickname}</span>
+                        {userData.tick && (
                             <FontAwesomeIcon
                                 className={cx('check')}
                                 icon={faCheckCircle}
                             ></FontAwesomeIcon>
                         )}
                     </h4>
-                    <span className={cx('username')}>{data.full_name}</span>
+                    <span className={cx('username')}>{userData.full_name}</span>
                 </div>
             </Link>
 
@@ -65,27 +73,27 @@ function AccountItems({ data, isSuggestItem = false }) {
             {isHover && isSuggestItem && (
                 <div
                     className={cx('desc')}
-                    onMouseEnter={debounceHandleMouseEnter}
+                    onMouseEnter={() => setIsHover(true)}
                     onMouseLeave={handleOnMouseLeave}
                 >
                     <div className={cx('desc-header')}>
                         <Image
                             className={cx('avatar')}
-                            src={data.avatar}
-                            alt={data.full_name}
+                            src={userData.avatar}
+                            alt={userData.full_name}
                         />
                         <Button
                             primary
                             className={cx('follow-btn')}
-                            onClick={increaseFollower}
+                            onClick={handleButtonOnClick}
                         >
                             Follow
                         </Button>
                     </div>
                     <div className={cx('info')}>
-                        <Link to={`/@${data.nickname}`} className={cx('name')}>
-                            <span>{data.nickname}</span>
-                            {data.tick && (
+                        <Link to={`/@${userData.nickname}`} className={cx('name')}>
+                            <span>{userData.nickname}</span>
+                            {userData.tick && (
                                 <FontAwesomeIcon
                                     className={cx('check')}
                                     icon={faCheckCircle}
@@ -94,10 +102,10 @@ function AccountItems({ data, isSuggestItem = false }) {
                         </Link>
                         <br />
                         <Link
-                            to={`/@${data.nickname}`}
+                            to={`/@${userData.nickname}`}
                             className={cx('username')}
                         >
-                            {data.full_name}
+                            {userData.full_name}
                         </Link>
                     </div>
                     <div>
@@ -105,7 +113,7 @@ function AccountItems({ data, isSuggestItem = false }) {
                             {countFollower}M
                         </span>
                         <span className={cx('followers')}>Followers</span>
-                        <span className={cx('likes-count')}>{data.like}M</span>
+                        <span className={cx('likes-count')}>{userData.like}M</span>
                         <span className={cx('likes')}>Likes</span>
                     </div>
                 </div>
