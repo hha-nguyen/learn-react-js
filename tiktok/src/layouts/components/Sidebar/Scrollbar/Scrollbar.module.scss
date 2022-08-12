@@ -1,0 +1,19 @@
+.track-and-thumb {
+    display: block;
+    height: 100%;  /* must have some height */
+    position: relative;
+    width: 16px; /* must have some width */
+}
+
+.track{
+    bottom: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 16px; /* must have some width */
+}
+
+.thumb{
+    position: absolute;
+    width: 16px; /* must have some width */
+}

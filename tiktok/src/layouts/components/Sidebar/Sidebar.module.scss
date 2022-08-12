@@ -1,9 +1,42 @@
+.containter {
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    perspective-origin: right top;
+    top: 60px;
+    width: var(--default-layout-sidebar-width);
+    position: fixed;
+    z-index: 99;
+    padding-right: 8px;
+    display: flex;
+}
+
 .wrapper{
     width: 356px;
     min-height: 1000px;
     background-color: white;
     padding: 20px 0 26px 8px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 
+.scrollbar{
+    position: absolute;
+    padding: 0 4px;
+    top: 0;
+    transform-origin: right top;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+    opacity: 0;
+    right: 0;
+    transform-origin: right top;
+}
 
 
