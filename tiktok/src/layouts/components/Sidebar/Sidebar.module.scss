@@ -1,16 +1,28 @@
 .containter {
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    perspective-origin: right top;
     top: 60px;
     width: var(--default-layout-sidebar-width);
     position: fixed;
     z-index: 99;
+    height: 100%;
     padding-right: 8px;
-    display: flex;
+    overflow-y: auto;
+    visibility: hidden;
+    transition: visibility 0.3s;
+
+    &::-webkit-scrollbar {
+        border-radius: 0;
+        width: 8px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .1);
+    }
+    
+    &::-webkit-scrollbar-track {
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
 }
 
 .wrapper{
@@ -18,25 +30,29 @@
     min-height: 1000px;
     background-color: white;
     padding: 20px 0 26px 8px;
-    overflow: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar{
-        display: none;
+    overflow-y: auto;
+    
+    button, input, [tabindex] {
+        outline: none;
+        border: none;
     }
+    
 }
 
-.scrollbar{
-    position: absolute;
-    padding: 0 4px;
-    top: 0;
-    transform-origin: right top;
-    -webkit-transition: opacity .5s;
-    transition: opacity .5s;
-    opacity: 0;
-    right: 0;
-    transform-origin: right top;
+.wrapper, 
+.containter:hover,
+.containter:focus {
+    visibility: visible;
 }
+
+.containter:hover {
+    transition: visibility 0s 0.3s;
+}
+
+button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+
 
 

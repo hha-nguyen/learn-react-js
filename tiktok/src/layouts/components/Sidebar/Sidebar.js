@@ -15,7 +15,6 @@ import Suggest from './Suggest';
 import { GROUP_OF_USER_DATA } from './Suggest';
 import Discover from './Discover/Discover';
 import Footer from './Footer/Footer';
-import Scrollbar from './Scrollbar';
 
 const cx = classNames.bind(styles);
 
@@ -75,7 +74,6 @@ function Sidebar() {
                 <Footer />
             </div>
         
-            <Scrollbar />
         </aside>
     );
 }
