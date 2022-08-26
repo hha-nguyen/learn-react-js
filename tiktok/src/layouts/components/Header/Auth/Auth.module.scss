@@ -1,0 +1,90 @@
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.5);
+    inset: 0;
+    position: fixed;
+    z-index: 10001;
+    overflow: auto;
+    outline: 0px;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    display: flex;
+    opacity: 1;
+}
+
+.content-container{
+    border-radius: 8px;
+    transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    transform: none;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    position: relative;
+    max-height: 693px;
+    height: 80%;
+    overflow: hidden
+}
+
+.modal-content {
+    width: 483px;
+    height: 100%;
+    padding: 48px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-btn-wrapper {
+    position: absolute;
+    top: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 1;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background: rgba(22, 24, 35, 0.03);
+    transform: scale(1.7);
+}
+
+.login-container{
+    flex: 1 1 0%;
+    overflow: auto;
+}
+
+.login-wrapper{
+    width: 375px;
+    margin: auto;
+    padding: unset;
+}
+
+
+
+.modal-footer{
+    color: rgb(22, 24, 35);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    height: 64px;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.sign-up-btn{
+    margin-left: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--primary);
+    cursor: pointer;
+
+    &:hover{
+        text-decoration: underline var(--primary);
+    }
+}
+

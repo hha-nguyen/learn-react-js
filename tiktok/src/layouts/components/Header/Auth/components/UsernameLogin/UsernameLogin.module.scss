@@ -1,0 +1,130 @@
+.wrapper{
+    width: 375px;
+    margin: auto;
+    padding: unset;
+}
+
+.title{
+    color: rgb(22, 24, 35);
+    font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    font-size: 3.2rem;
+    margin: 16px auto;
+    font-weight: bold;
+    text-align: center;
+}
+
+.description{
+    color: rgb(22, 24, 35);
+    font-weight: 550;
+    font-size: 1.5rem;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.input-container{
+    position: relative;
+    margin-bottom: 9px;
+}
+
+.account-input{
+    border-radius: 2px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    padding-inline-start: 12px;
+    color: rgb(22, 24, 35);
+    line-height: 100%;
+    outline: none;
+    font-size: 16px;
+    height: 44px;
+    caret-color: rgb(254, 44, 85);
+    width: 100%;
+    padding-inline-end: unset;
+}
+
+.password-input{
+    border-radius: 2px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    padding-inline: 12px 24px;
+    color: rgb(22, 24, 35);
+    line-height: 100%;
+    outline: none;
+    font-size: 16px;
+    height: 44px;
+    caret-color: rgb(254, 44, 85);
+    width: 100%;
+}
+
+.disable-btn{
+    border: none;
+    color: rgba(22, 24, 35, 0.34);
+    background-color: rgba(22, 24, 35, 0.06);
+    pointer-events: none;
+    border-radius: 4px;
+    min-width: 120px;
+    min-height: 46px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    font-family: ProximaNova, PingFangSC, sans-serif;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 21px;
+}
+
+.submit-btn{
+    border-radius: 4px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(254, 44, 85);
+    min-width: 120px;
+    min-height: 46px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    font-family: ProximaNova, PingFangSC, sans-serif;
+    display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 6px 8px;
+    user-select: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 21px;
+}
+
+.password-icon{
+    right: 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    height: 44px;
+    padding-inline-end: 16px;
+    line-height: 0;
+    margin-inline-start: 16px;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear
+{
+    display: none;
+}

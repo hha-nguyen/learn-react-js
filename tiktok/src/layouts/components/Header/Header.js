@@ -13,6 +13,7 @@ import {
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 import Menu from '~/components/Popper/Menu/Menu';
 import { InboxIcon, MessageIcon } from '~/components/Icons/Icons';
@@ -23,6 +24,7 @@ import classNames from 'classnames/bind';
 import images from '~/assets/images';
 import Button from '~/components/Button/Button';
 import config from '~/config/routes'; 
+import Auth from './Auth';
 
 const cx = classNames.bind(styles);
 
@@ -58,8 +60,9 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
+    const [clickedLogIn, setClickedLogIn] = useState(false);
 
-    const currentUser = true;
+    const currentUser = false;
 
     const userMenu = [
         {
@@ -85,8 +88,6 @@ function Header() {
         },
     ]
 
-    
-
     // Handle logic
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -96,7 +97,7 @@ function Header() {
             default:
         }
     };
-
+    console.log(clickedLogIn);
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -128,7 +129,7 @@ function Header() {
                         </>
                     ) : (
                         <>
-                            <Button primary>Log in</Button>
+                            <Button primary onClick={() => setClickedLogIn(true)}>Log in</Button>
                         </>
                     )}
 
@@ -145,10 +146,14 @@ function Header() {
                             </button>
                         )}
                     </Menu>
+
+                    {clickedLogIn && (<Auth handleClickCloseBtn={clickedLogIn => setClickedLogIn(clickedLogIn)}/>)}
                 </div>
             </div>
+
         </header>
     );
 }
+
 
 export default Header;
