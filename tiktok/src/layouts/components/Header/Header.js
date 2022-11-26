@@ -97,7 +97,7 @@ function Header() {
             default:
         }
     };
-    console.log(clickedLogIn);
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>

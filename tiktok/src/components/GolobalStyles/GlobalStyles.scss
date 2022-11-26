@@ -56,8 +56,19 @@ button, input, [tabindex] {
 }
 
 a {
-    color: var(--text-color);
+    transition: color 250ms;
     text-decoration: none;
+    color: rgba(22, 24, 35, 1.0);
+    cursor: pointer;
+
+    &:visited {
+        color: rgba(22, 24, 35, 1.0);
+    }
+
+    &:hover {
+        color: rgba(22, 24, 35, 1.0);
+        text-decoration: underline;
+    }
 }
 
 // Fonts emmbeded

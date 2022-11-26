@@ -88,3 +88,29 @@
     }
 }
 
+.agreement{
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(22, 24, 35, 0.12);
+    border-top-color: rgba(22, 24, 35, 0.12);
+    border-right-color: rgba(22, 24, 35, 0.12);
+    border-left-color: rgba(22, 24, 35, 0.12);
+    padding: 16px 30px;
+    margin-bottom: unset;
+}
+
+.text{
+    color: rgba(22, 24, 35, 0.5);
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    width: 375px;
+    text-align: center;
+}
+
+

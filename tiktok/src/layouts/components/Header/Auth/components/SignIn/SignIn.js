@@ -1,13 +1,13 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import { BackIcon, EyesCloseIcon, EyesOpenIcon } from '~/components/Icons';
-import styles from './UsernameLogin.module.scss';
+import styles from './SignIn.module.scss';
 
 import { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-export default function UsernameLogin(props) {
+function SignIn(props) {
     const [isOpened, setIsOpened] = useState(false);
     const [isChanged, setIsChanged] = useState(false);
 
@@ -35,7 +35,7 @@ export default function UsernameLogin(props) {
         }
     }
 
-    return (
+    return ( 
         <div className={cx('wrapper')}>
             <div className={cx('back-icon')} onClick={() => props.handleBack(true)}>
                 <BackIcon />
@@ -79,7 +79,8 @@ export default function UsernameLogin(props) {
                 ? (<button type='submit' className={cx('submit-btn')}>Log in</button>)
                 : (<button type='submit' disabled className={cx('disable-btn')}>Log in</button>)}
             </form>
-        </div>
+        </div>    
     );
 }
 
+export default SignIn;
